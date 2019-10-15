@@ -8,5 +8,5 @@ public interface EmployeeService {
 	public Employee addEmployee(Employee employee);
 	public Employee updateEmployee(Employee employee);
 	public Employee deleteEmployee(int id);
-	public List<Employee> listEmployee();
+	public List<Employee> listEmployees();
 }

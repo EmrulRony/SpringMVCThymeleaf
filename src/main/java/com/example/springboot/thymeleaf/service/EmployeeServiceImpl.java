@@ -3,6 +3,7 @@ package com.example.springboot.thymeleaf.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.annotations.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public List<Employee> listEmployee() {
+	public List<Employee> listEmployees() {
 		// TODO Auto-generated method stub
 		return dao.findAll();
 	}
