@@ -2,8 +2,6 @@ package com.example.springboot.thymeleaf.service;
 
 import java.util.List;
 import java.util.Optional;
-
-import org.hibernate.annotations.Sort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,4 +37,16 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return dao.findAll();
 	}
 
+	@Override
+	public Employee findEmployee(int id) {
+		Optional<Employee>  result = dao.findById(id);
+		Employee emp = null;
+		if (result!=null) {
+			emp= result.get();
+		}
+		else {
+			throw new RuntimeException("Employee not found");
+		}
+		return emp;
+	}
 }

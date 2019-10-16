@@ -19,18 +19,30 @@
 					<th scope="col">LastName</th>
 					<th scope="col">Email</th>
 					<th scope="col">Age</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="list:${employee_list}">
+				<tr th:each="list : ${employee_list}">
 					<td th:text="${list.id}">id</td>
 					<td th:text="${list.firstName}">firstName</td>
 					<td th:text="${list.lastName}">lastName</td>
 					<td th:text="${list.email}">email</td>
 					<td th:text="${list.age}">age</td>
+					
+					<td>
+					<a class="btn btn-primary" th:href="@{/employees/showUpdateForm( id = ${list.id})}">Edit</a>
+					
+					<a class="btn btn-danger" th:href="@{/employees/delete( id = ${list.id})}">Delete</a>
+					</td>
 				</tr>
 			</tbody>
 		</table>
+		
+		<form th:action="@{/employees/findById}" method="GET">
+			<input type="text" class="form-control mb-4 col-4" id="empId" name="empId" placeholder="Employee Id">
+			<button type="submit" class="btn btn-primary mb-4 col-2">Find</button>
+		</form>
 	</div>
 
 </body>

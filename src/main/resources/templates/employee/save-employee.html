@@ -14,7 +14,8 @@
 
 		<p class="h4 mb-4">Save Employee</p>
 
-		<form th:action="@{/employees/save}" th:object="${employee}" method="POST">
+		<form action="#" th:action="@{/employees/save}" th:object="${employee}" method="POST">
+			<input type="hidden" th:field="*{id}">
 			<input type="text" class="form-control mb-4 col-4" id="firstName" th:field="*{firstName}" placeholder="First Name">
 			<input type="text" class="form-control mb-4 col-4" id="lastName" th:field="*{lastName}" placeholder="Last Name">
 			<input type="email" class="form-control mb-4 col-4" id="email" th:field="*{email}" placeholder="Email">
@@ -22,6 +23,7 @@
 				
 			<button type="submit" class="btn btn-primary mb-4 col-4">Submit</button>
 		</form>
+		
 
 	</div>
 
